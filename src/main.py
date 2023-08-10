@@ -1,17 +1,23 @@
-# main.py
-
 from fastapi import FastAPI
-from configparser import ConfigParser
+from src.settings import settings
+from src.session import engine
+from src.base_class import Base
 
 
-parser = ConfigParser()
-parser.read('settings.ini')
+def create_tables():
+    Base.metadata.create_all(bind=engine)
 
 
-app = FastAPI(title=parser.get('project_credentials', 'project_name'),
-              version=parser.get('project_credentials', 'project_version'))
+def start_application():
+    app = FastAPI(title=settings.PROJECT_NAME,
+                  version=settings.PROJECT_VERSION)
+    create_tables()
+    return app
+
+
+app = start_application()
 
 
 @app.get("/")
-def hello_api():
+def home():
     return {"msg": "Hello FastAPI🚀"}

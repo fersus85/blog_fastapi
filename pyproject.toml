@@ -9,6 +9,11 @@ packages = [{include = "blog_fastapi"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 fastapi = {extras = ["all"], version = "^0.101.0"}
+sqlalchemy = "^2.0.19"
+alembic = "^1.11.2"
+psycopg2-binary = "^2.9.7"
+python-dotenv = "^1.0.0"
+toml = "^0.10.2"
 
 
 [build-system]
