@@ -1,8 +1,8 @@
-"""first commit
+"""create user and blog table migrations
 
-Revision ID: f6c38ddfd4de
+Revision ID: d43bf3f19644
 Revises: 
-Create Date: 2023-08-11 19:53:49.486020
+Create Date: 2023-08-15 10:18:06.602571
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'f6c38ddfd4de'
+revision: str = 'd43bf3f19644'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
